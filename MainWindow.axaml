@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="KeklMapAuthorChanger.MainWindow"
+        Width="600" Height="760" Title="KEKL Map Author Changer">
+    <StackPanel Margin="10">
+        <TextBlock Text="KEKL Map Author Changer" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Author Name:" Width="100"/>
+            <TextBox x:Name="AuthorNameTextBox" Width="460"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Author Login:" Width="100"/>
+            <TextBox x:Name="AuthorLoginTextBox" Width="460"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Author Region:" Width="100"/>
+            <TextBox x:Name="AuthorRegionTextBox" Text="World" Width="460"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="SelectFolderButton" Content="Select Folder" Width="110" Click="SelectFolderButton_Click"/>
+            <!-- <TextBox x:Name="FolderPathTextBox"  Margin="10,0,0,0" Width="440" IsReadOnly="True"/> -->
+            <TextBox x:Name="FolderPathTextBox"  Margin="10,0,0,0" Width="440"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Maps in Dir:" Width="110"/>
+            <TextBlock x:Name="MapsInDirTextBox" Text="No Folder" Margin="10,0,0,0"/>
+            <!-- <TextBox x:Name="MapsInDirTextBox"  Margin="10,0,0,0" Width="440" IsReadOnly="True"/> -->
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="ProcessButton" Content="Process Maps" Width="110" Click="ProcessButton_Click"/>
+            <ProgressBar x:Name="ProgressBar" Margin="10,0,0,0" Width="440"/>
+        </StackPanel>
+        <TextBlock x:Name="StatusLabel" Text="Status: Idle" Margin="0,0,0,10"/>
+        <!-- <TextBox x:Name="LogOutputTextBox" Width="570" Height="140" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap"/> -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- Define other rows if needed -->
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+                <ScrollViewer Grid.Row="0" Width="570" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" MaxHeight="400">
+                    <StackPanel x:Name="LogOutputPanel" Orientation="Vertical"/>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </StackPanel>
+</Window>
